@@ -1,0 +1,3 @@
+(library
+    (name default_injector)
+    (implements injector))
