@@ -15,4 +15,12 @@ $ make all # should build normally
 $ opam switch my-4.06.0-switch
 $ eval $(opam env)
 $ make all # fail to build with inconsitent assumptions
+
+# ocamlopt.opt -g -noautolink -o mybuild/main.opt mybuild/libinjector.cmxa
+# mybuild/libutil.cmxa \
+#                 mybuild/main.cmx
+# File "_none_", line 1:
+# Error: Files mybuild/libutil.cmxa and mybuild/libinjector.cmxa
+#        make inconsistent assumptions over interface Injector
+# make: *** [all] Error 2
 ```
