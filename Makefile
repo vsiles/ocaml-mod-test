@@ -7,7 +7,7 @@ buck:
 	ocamlopt.opt -c -o mybuild/util_S.cmx -I util -I injector  util/util_S.ml
 	ocamlopt.opt -c -o mybuild/util.cmx -I util -I injector -I mybuild -w -58 util/util.ml
 	ocamlopt.opt -a -o mybuild/libutil.cmxa mybuild/default.cmx mybuild/test.cmx mybuild/util_S.cmx mybuild/util.cmx
-	ocamlopt.opt -c -o mybuild/injector.cmx -I injector/default -I injector injector/default/injector.ml
+	ocamlopt.opt -c -o mybuild/injector.cmx -intf-suffix .ml -I mybuild -I injector/default -I injector injector/default/injector.ml
 	ocamlopt.opt -a -o mybuild/libinjector.cmxa mybuild/injector.cmx 
 	ocamlopt.opt -c -o mybuild/main.cmx -I mybuild main.ml
 	ocamlopt.opt -o mybuild/main.opt mybuild/libinjector.cmxa mybuild/libutil.cmxa mybuild/main.cmx
